@@ -13,7 +13,8 @@ namespace CRPG
         public static void Initialize()
         {
             Console.WriteLine("Initializing Game Engine Version {0}", Version);
-            Console.WriteLine("");
+            Console.WriteLine("\n\nWelcome to the World of {0}", World.WorldName);
+            Console.WriteLine();
         }
     }
 }
