@@ -6,11 +6,30 @@ using System.Threading.Tasks;
 
 namespace CRPG
 {
-    public class Player
+    public class Player : LivingCreature
     {
-        public string Name { set; get; }
+        public string Name;
+        public int Gold;
+        public int ExperiencePoints;
+        public int Level;
+        public Location CurrentLocation;
+        public List<InventoryItem> Inventory;
+        public List<PlayerQuest> Quests;
 
-        public Location CurrentLocation { set; get; }
+        public Player(string name, int gold, int experiencePoints, int level, int currentHitPoints, int maximumHitPoints) : base(currentHitPoints, maximumHitPoints)
+        {
+            Name = name;
+            Gold = gold;
+            ExperiencePoints = experiencePoints;
+            Level = level;
+            Inventory = new List<InventoryItem>();
+            Quests = new List<PlayerQuest>();
+        }
+
+        public Player()
+        {
+
+        }
 
         public void MoveTo(Location loc)
         {
