@@ -1,0 +1,11 @@
+﻿Proposed changes for v0.0.3
++ Added CHANGELOG
++ Debug commands
++ Stats for player
++ Inventory
++ Random number
++ WhereAmI (similar look, when we move, we see the description)
++ Shortcut navigation
++ Location requirement
+
+Version 0.0.3 Completed on 2/3/2020

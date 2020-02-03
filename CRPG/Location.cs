@@ -24,6 +24,7 @@ namespace CRPG
             ID = iD;
             Name = name;
             Description = description;
+            ItemRequiredToEnter = itemRequiredToEnter;
         }
     }
 }
