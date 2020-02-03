@@ -9,3 +9,8 @@
 + Location requirement
 
 Version 0.0.3 Completed on 2/3/2020
+
+Proposed changes for v0.0.4
++ Healing each move
+- Add quests to the system
+- Monster Detection
