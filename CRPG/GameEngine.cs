@@ -8,7 +8,8 @@ namespace CRPG
 {
     public static class GameEngine
     {
-        public static string Version = "0.0.3";
+        public static string Version = "0.0.4";
+        public static Monster _currentMonster;
 
         public static void Initialize()
         {
@@ -23,6 +24,14 @@ namespace CRPG
             World.ListItems();
             World.ListMonsters();
             World.ListQuests();
+            if (_currentMonster != null)
+            {
+                Console.WriteLine("Current Monster: {0}", _currentMonster.Name);
+            }
+            else
+            {
+                Console.WriteLine("No current monster.");
+            }
         }
 
         public static void QuestProcessor(Player _player, Location newLocation)
@@ -85,6 +94,26 @@ namespace CRPG
                 }
             }
 
+        }
+
+        public static void MonsterProcessor(Player player, Location newLocation)
+        {
+            string monsterMessage = "";
+            if (newLocation.MonsterLivingHere != null)
+            {
+                monsterMessage += "You see a " + newLocation.MonsterLivingHere.Name + "\n";
+                Console.WriteLine(monsterMessage);
+                Monster standardMonster = World.MonsterByID(newLocation.MonsterLivingHere.ID);
+                _currentMonster = new Monster(standardMonster.ID, standardMonster.Name, standardMonster.MaximumDamage, standardMonster.RewardExperiencePoints, standardMonster.RewardGold, standardMonster.CurrentHitPoints, standardMonster.MaximumHitPoints);
+                foreach (LootItem lootItem in standardMonster.LootTable)
+                {
+                    _currentMonster.LootTable.Add(lootItem);
+                }
+            }
+            else
+            {
+                _currentMonster = null;
+            }
         }
     }
 }

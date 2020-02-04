@@ -55,6 +55,7 @@ namespace CRPG
             CurrentHitPoints = MaximumHitPoints;
             CurrentLocation = loc;
             GameEngine.QuestProcessor(this, loc);
+            GameEngine.MonsterProcessor(this, loc);
         }
 
         public void MoveNorth()
