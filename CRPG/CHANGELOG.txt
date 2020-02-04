@@ -16,3 +16,11 @@ Proposed changes for v0.0.4
 + Monster Detection
 
 Version 0.0.4 Completed on 2/4/2020
+
+Proposed changes for v0.0.5
++ Weapon equipping
++ Attack Engine
++ Last bit of cleanup, abbreaviate some of the commands
+- Finish HELP system
+
+Version 0.0.5 Completed on 2/4/2020
